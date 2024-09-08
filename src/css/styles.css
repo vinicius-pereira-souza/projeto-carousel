@@ -26,6 +26,13 @@ body {
   user-select: none;
 }
 
+.slide-wrapper img:nth-child(1) {
+  margin-left: 25%;
+}
+.slide-wrapper img:nth-child(6) {
+  margin-right: 25%;
+}
+
 [data-wrapper="center"] {
   /* box-shadow: 0 0px 13px 0 rgba(0, 0, 0, 31%); */
   box-shadow: 0 0px 13px 0 rgba(255, 0, 0, 70%);

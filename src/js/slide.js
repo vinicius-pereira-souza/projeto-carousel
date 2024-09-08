@@ -17,7 +17,6 @@ function onStart(e) {
   } else {
     dist.startX = e.clientX;
   }
-
   slide.scrollLeft = slide.scrollLeft;
 }
 
@@ -55,6 +54,7 @@ function onEnd(e) {
 slide.addEventListener("mousedown", onStart);
 slide.addEventListener("mousemove", onMove);
 slide.addEventListener("mouseup", onEnd);
+slide.addEventListener("mouseleave", onEnd);
 
 slide.addEventListener("touchstart", onStart);
 slide.addEventListener("touchmove", onMove);
