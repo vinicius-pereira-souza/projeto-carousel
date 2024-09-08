@@ -16,7 +16,7 @@ body {
   display: flex;
   align-items: center;
   overflow-x: hidden;
-  padding: 10px 0;
+  padding: 50px 0;
   gap: 50px;
 }
 
@@ -33,7 +33,10 @@ body {
   margin-right: 25%;
 }
 
-[data-wrapper="center"] {
-  /* box-shadow: 0 0px 13px 0 rgba(0, 0, 0, 31%); */
-  box-shadow: 0 0px 13px 0 rgba(255, 0, 0, 70%);
+/* [data-wrapper="center"] {
+  box-shadow: 0 0px 13px 0 rgba(0, 0, 0, 31%);
+} */
+
+[data-wrapper=""] {
+  filter: blur(6px);
 }

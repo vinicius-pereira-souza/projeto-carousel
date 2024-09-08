@@ -6,23 +6,19 @@ const dist = {
   startX: 0,
   movement: 0,
 };
-let activeSlide = false;
-const img = imgs[imgs.length - 1];
 
 function onStart(e) {
-  activeSlide = true;
+  slide.addEventListener("mousemove", onMove);
+  slide.addEventListener("touchmove", onMove);
 
   if (e.type == "touchstart") {
     dist.startX = e.touches[0].clientX;
   } else {
     dist.startX = e.clientX;
   }
-  slide.scrollLeft = slide.scrollLeft;
 }
 
 function onMove(e) {
-  if (!activeSlide) return;
-
   let currentClietX;
   let velocity;
 
@@ -31,14 +27,15 @@ function onMove(e) {
     velocity = 60;
   } else {
     currentClietX = e.clientX;
-    velocity = 46;
+    velocity = 48;
   }
 
   slide.scrollLeft =
     slide.scrollLeft + (dist.startX - currentClietX) / velocity;
 }
 function onEnd(e) {
-  activeSlide = false;
+  slide.removeEventListener("mousemove", onMove);
+  slide.removeEventListener("touchmove", onMove);
 
   if (!(slide.scrollLeft <= 0)) {
     if (e.type == "touchend") {
@@ -52,10 +49,10 @@ function onEnd(e) {
 }
 
 slide.addEventListener("mousedown", onStart);
-slide.addEventListener("mousemove", onMove);
 slide.addEventListener("mouseup", onEnd);
 slide.addEventListener("mouseleave", onEnd);
 
 slide.addEventListener("touchstart", onStart);
-slide.addEventListener("touchmove", onMove);
 slide.addEventListener("touchend", onEnd);
+
+// img.dataset.wrapper = "center";
