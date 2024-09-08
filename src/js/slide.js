@@ -27,7 +27,7 @@ function onMove(e) {
     velocity = 60;
   } else {
     currentClietX = e.clientX;
-    velocity = 48;
+    velocity = 26;
   }
 
   slide.scrollLeft =
