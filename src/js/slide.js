@@ -12,7 +12,11 @@ const img = imgs[imgs.length - 1];
 function onStart(e) {
   activeSlide = true;
 
-  dist.startX = e.clientX || e.touches[0].clientX;
+  if (e.type == "touchstart") {
+    dist.startX = e.touches[0].clientX;
+  } else {
+    dist.startX = e.clientX;
+  }
 
   slide.scrollLeft = slide.scrollLeft;
 }
@@ -38,7 +42,7 @@ function onEnd(e) {
   activeSlide = false;
 
   if (!(slide.scrollLeft <= 0)) {
-    if (e.type == "touchmove") {
+    if (e.type == "touchend") {
       dist.finalPosition = e.changedTouches[0].clientX;
     } else {
       dist.finalPosition = e.clientX;
