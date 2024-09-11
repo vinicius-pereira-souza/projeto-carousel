@@ -30,7 +30,7 @@ function onMove(e) {
     velocity = 60;
   } else {
     currentClietX = e.clientX;
-    velocity = 26;
+    velocity = 70;
   }
 
   slide.scrollLeft =
@@ -38,6 +38,7 @@ function onMove(e) {
 
   dist.side = e.movementX;
 }
+
 function onEnd(e) {
   slide.removeEventListener("mousemove", onMove);
   slide.removeEventListener("touchmove", onMove);
@@ -62,13 +63,13 @@ function centerImage() {
     const rect = img.getBoundingClientRect();
     if (
       img.offsetLeft + rect.width / 2 - slide.scrollLeft - centerContainer <=
-        40 &&
+        rect.width / 2 &&
       img.offsetLeft + rect.width / 2 - slide.scrollLeft - centerContainer >=
-        -40
+        -rect.width / 2
     ) {
       slide.scrollTo({
         top: 0,
-        left: img.offsetLeft + rect.width / 2 - centerContainer,
+        left: img.offsetLeft + rect.width / 2 - centerContainer + 80,
         behavior: "smooth",
       });
 
@@ -104,5 +105,7 @@ slide.addEventListener("mouseleave", onEnd);
 
 slide.addEventListener("touchstart", onStart);
 slide.addEventListener("touchend", onEnd);
+
+centerImage();
 
 // img.dataset.wrapper = "center";
