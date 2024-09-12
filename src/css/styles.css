@@ -29,12 +29,6 @@ body {
   max-width: 700px;
 }
 
-li {
-  position: relative;
-  display: block;
-  transition: all 0.7s;
-}
-
 img {
   transition: all 0.9s;
   filter: blur(5px);
@@ -45,4 +39,11 @@ img.center {
   box-shadow: rgb(0 0 0 / 58%) 0px 4px 12px;
   transform: scale(1.1);
   filter: blur(0);
+}
+
+@media (max-width: 630px) {
+  .carousel img {
+    display: block;
+    max-width: 95%;
+  }
 }
