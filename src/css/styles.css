@@ -21,9 +21,28 @@ body {
   align-items: center;
   gap: 20px;
   overflow-x: hidden;
+  padding: 50px 0;
 }
 
 .carousel img {
   display: block;
   max-width: 700px;
+}
+
+li {
+  position: relative;
+  display: block;
+  transition: all 0.7s;
+}
+
+img {
+  transition: all 0.9s;
+  filter: blur(5px);
+}
+
+img.center {
+  z-index: 10;
+  box-shadow: rgb(0 0 0 / 58%) 0px 4px 12px;
+  transform: scale(1.1);
+  filter: blur(0);
 }
