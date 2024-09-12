@@ -15,31 +15,15 @@ body {
   background-color: #faf6ed;
 }
 
-.slide-wrapper {
-  flex: 1;
+.carousel {
+  width: 100%;
   display: flex;
   align-items: center;
+  gap: 20px;
   overflow-x: hidden;
-  padding: 50px 0;
-  gap: 50px;
 }
 
-.slide-wrapper img:not(.centerImgSlide) {
-  flex: 1;
+.carousel img {
   display: block;
-  max-width: 43%;
-  transition: all 0.3s;
-  opacity: 0.9;
-}
-
-.slide-wrapper img:nth-child(1) {
-  margin-left: 30%;
-}
-.slide-wrapper img:nth-child(6) {
-  margin-right: 40%;
-}
-
-.centerImgSlide {
-  max-width: 55%;
-  transition: all 0.3s;
+  max-width: 700px;
 }
